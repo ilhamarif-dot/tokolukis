@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtLukis - Toko Lukisan</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f5f0;
+            color: #333;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #3b2418;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav h1 {
+            font-size: 25px;
+            color: #f6c56b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f6c56b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, #fff5df, #e8d3b9);
+        }
+
+        .hero-text {
+            width: 50%;
+        }
+
+        .hero-text h2 {
+            font-size: 48px;
+            color: #3b2418;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #b86b35;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #8e4d26;
+        }
+
+        .paint {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(
+                45deg,
+                #e63946,
+                #f4a261,
+                #e9c46a,
+                #2a9d8f,
+                #457b9d
+            );
+            box-shadow: 0 20px 40px #0003;
+        }
+
+        /* PRODUK */
+        .produk {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .produk h2 {
+            font-size: 35px;
+            color: #3b2418;
+            margin-bottom: 10px;
+        }
+
+        .produk > p {
+            margin-bottom: 40px;
+            color: #666;
+        }
+
+        .produk-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px #0002;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .gambar {
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+        }
+
+        .g1 {
+            background: linear-gradient(135deg, #e63946, #f4a261);
+        }
+
+        .g2 {
+            background: linear-gradient(135deg, #457b9d, #a8dadc);
+        }
+
+        .g3 {
+            background: linear-gradient(135deg, #2a9d8f, #e9c46a);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+            color: #3b2418;
+        }
+
+        .harga {
+            color: #b86b35;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        /* TENTANG */
+        .tentang {
+            padding: 70px 8%;
+            background: #3b2418;
+            color: white;
+            text-align: center;
+        }
+
+        .tentang h2 {
+            color: #f6c56b;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .tentang p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* KONTAK */
+        .kontak {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .kontak h2 {
+            font-size: 35px;
+            color: #3b2418;
+            margin-bottom: 20px;
+        }
+
+        .kontak p {
+            margin: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #24150e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .hero-text h2 {
+                font-size: 36px;
+            }
+
+            .paint {
+                width: 250px;
+                height: 250px;
+            }
+
+            .produk-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h1>🎨 ArtLukis</h1>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Temukan Seni di Setiap Goresan</h2>
+
+            <p>
+                Selamat datang di ArtLukis, tempat untuk menemukan
+                berbagai lukisan indah dan karya seni yang unik.
+            </p>
+
+            <a href="#produk" class="btn">Lihat Koleksi</a>
+        </div>
+
+        <div class="paint"></div>
+    </section>
+
+    <!-- PRODUK -->
+    <section class="produk" id="produk">
+        <h2>Koleksi Lukisan</h2>
+        <p>Pilih karya seni favoritmu.</p>
+
+        <div class="produk-container">
+
+            <div class="card">
+                <div class="gambar g1">🌅</div>
+
+                <div class="card-content">
+                    <h3>Senja Indah</h3>
+                    <p>Lukisan pemandangan senja dengan warna yang hangat.</p>
+                    <div class="harga">Rp250.000</div>
+                    <a href="#kontak" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="gambar g2">🏔️</div>
+
+                <div class="card-content">
+                    <h3>Gunung Biru</h3>
+                    <p>Lukisan pegunungan dengan suasana yang tenang.</p>
+                    <div class="harga">Rp300.000</div>
+                    <a href="#kontak" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="gambar g3">🌳</div>
+
+                <div class="card-content">
+                    <h3>Alam Hijau</h3>
+                    <p>Lukisan alam yang cocok untuk mempercantik ruangan.</p>
+                    <div class="harga">Rp275.000</div>
+                    <a href="#kontak" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section class="tentang" id="tentang">
+        <h2>Tentang ArtLukis</h2>
+
+        <p>
+            ArtLukis adalah toko yang menyediakan berbagai macam
+            lukisan dan karya seni. Kami menghadirkan karya dengan
+            kualitas terbaik untuk menghiasi rumah, kamar, kantor,
+            maupun sebagai hadiah untuk orang tersayang.
+        </p>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="kontak" id="kontak">
+        <h2>Hubungi Kami</h2>
+
+        <p>📍 Alamat: Jl. Seni Indah No. 10</p>
+        <p>📱 WhatsApp: 0812-3456-7890</p>
+        <p>📧 Email: artlukis@gmail.com</p>
+
+        <br>
+
+        <a href="#" class="btn">Pesan Sekarang</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ArtLukis | Toko Lukisan</p>
+    </footer>
+
+</body>
+  </html>
